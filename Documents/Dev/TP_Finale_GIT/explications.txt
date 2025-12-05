@@ -1,0 +1,49 @@
+EXPLICATIONS DES COMMANDES GIT UTILISÉES
+
+1. git log
+Affiche l'historique complet des commits avec tous les détails (hash, auteur, date, message).
+
+2. git show 9ac9363
+Affiche les détails d'un commit spécifique ainsi que les modifications (diff) apportées.
+
+3. git diff 733c098 29c2a30
+Compare deux versions du projet entre deux commits en montrant les lignes ajoutées (+) et supprimées (-).
+
+
+4. git commit --amend -m "nouveau message"
+Modifie le message du dernier commit (le hash change car Git crée un nouveau commit).
+
+
+5. git reset --soft HEAD~1
+Recule le pointeur HEAD d'un commit en arrière tout en gardant les modifications en staging.
+
+
+6. git revert 9ac9363
+Crée un nouveau commit qui annule les modifications d'un commit précédent sans casser l'historique.
+
+
+7. git stash save "message"
+Sauvegarde temporairement les modifications en cours et remet le répertoire à l'état du dernier commit.
+
+8. git stash pop
+Récupère et réapplique les modifications sauvegardées par stash (puis supprime le stash).
+
+
+RAPPORT GIT
+
+1. Qu'as-tu appris pendant ce TP ?
+
+Même si j'utilise déjà Git régulièrement, ce TP m'a aidé à approfondir certaines commandes que j'avais tendance à éviter.
+Par exemple, git commit --amend et git reset, je les connaissais, mais je ne les utilisais pas trop.
+Là, j'ai pu les pratiquer dans un cadre sécurisé et ça m'a mis plus à l'aise.
+
+2. Quelle commande Git as-tu trouvé la plus utile et pourquoi ?
+
+Git revert. Elle permet d'annuler proprement des modifications sans toucher à l'historique, qui est important
+quand on travaille en équipe. Pas besoin de forcer un push et aucun risque de créer des conflits pour les autres développeurs.
+
+
+3. Quelle partie t'a posé le plus de difficulté ?
+
+L'étape 6 avec le revert du chapitre 2. En supprimant le chapitre 2 alors que le chapitre 3 existait toujours,
+Git ne savait plus quoi faire. J'ai dû résoudre le conflit manuellement en gardant uniquement les chapitres 1 et 3.
